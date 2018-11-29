@@ -4,4 +4,5 @@ $(document).ready(function(){
 	console.log(typeof element);
 	console.log(typeof test1);
 	$('#'+element).addClass('active');
+//adddd
 });
