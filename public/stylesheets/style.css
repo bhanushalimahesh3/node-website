@@ -3,12 +3,12 @@
       color: #555555;
   }
   .container-fluid {
-      padding-top: 70px;
-      padding-bottom: 70px;
+      padding-top: 80px;
+      padding-bottom: 80px;
   }
   .navbar {
-      padding-top: 15px;
-      padding-bottom: 15px;
+      padding-top: 20px;
+      padding-bottom: 20px;
       border: 0;
       border-radius: 0;
       margin-bottom: 0;
