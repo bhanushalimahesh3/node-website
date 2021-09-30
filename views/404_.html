@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>oops..!</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+      .box-1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        transition: all 2s;
+      }
+      .box-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-color: #eec0c6; */
+        /* background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%); */
+        height: 20vh;
+        transition: all 2s;
+        flex-direction: column;
+      }
+      .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .zero {
+        margin: 1rem 2rem;
+        animation: scale 10s ease 2;
+      }
+      .rotate {
+        animation: rotate1 10s ease 2;
+      }
+      .anti-rotate {
+        animation: rotate2 10s ease 2;
+      }
+      .bounce1 {
+        animation: bounce 5s 1s infinite ease-in;
+      }
+      .bounce2 {
+        animation: bounce 5s 2s infinite ease-in;
+      }
+      .bounce3 {
+        animation: bounce 5s 3s infinite ease-in;
+      }
+      h1 {
+        font-family: "Rampart One", cursive;
+        font-size: 8rem;
+      }
+      a {
+        text-align: center;
+        text-decoration: none;
+        border: solid 1px black;
+        padding: 10px 20px;
+        border-radius: 20px;
+        color: rgba(0, 0, 0, 0.7);
+        transition: transform 0.5s;
+      }
+      a:hover {
+        color: black;
+        transform: scale(1.5);
+        transition: transform 0.5s;
+      }
+      i {
+        position: relative;
+        top: -25%;
+      }
+
+      @keyframes rotate1 {
+        0% {
+          /* color: red; */
+          transform: translate(0rem, 0rem);
+        }
+        25% {
+          /* color: yellow; */
+          /* transform: translate(1rem, 2rem); */
+        }
+        50% {
+          /* color: blue; */
+          transform: translate(7rem, 10rem);
+        }
+        75% {
+          /* color: green; */
+          /* transform: translate(12rem, 2rem); */
+        }
+        100% {
+          /* color: red; */
+          transform: translate(14.25rem, 0rem);
+        }
+      }
+      @keyframes rotate2 {
+        0% {
+          /* color: red; */
+          transform: translate(0rem, 0rem);
+        }
+        25% {
+          /* color: yellow; */
+          /* transform: translate(1rem, 2rem); */
+        }
+        50% {
+          /* color: blue; */
+          transform: translate(-7rem, -10rem);
+        }
+        75% {
+          /* color: green; */
+          /* transform: translate(12rem, 2rem); */
+        }
+        100% {
+          /* color: red; */
+          transform: translate(-14.25rem, -0rem);
+        }
+      }
+      @keyframes scale {
+        0% {
+          /* color: red; */
+          transform: scale(1);
+        }
+        25% {
+          /* color: yellow; */
+          transform: scale(0.5);
+        }
+        50% {
+          /* color: blue; */
+          transform: scale(1);
+        }
+        75% {
+          /* color: green; */
+          transform: scale(0.5);
+        }
+        100% {
+          /* color: red; */
+          transform: scale(1);
+        }
+      }
+      @keyframes bounce {
+        0% {
+          transform: translateY(0%);
+        }
+        50% {
+          transform: translateY(100%);
+        }
+        /* 100% {
+          transform: translateY(0%);
+        } */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box-1">
+        <div class="text four-1 rotate"><h1>4</h1></div>
+        <div class="text zero">
+          <h1>0</h1>
+        </div>
+        <div class="text four-2 anti-rotate"><h1>4</h1></div>
+      </div>
+      <div class="box-2">
+        <i class="fa fa-5x"></i>
+        <a href="/">Find Someone at Home</a>
+      </div>
+    </div>
+  </body>
+  <script>
+    setTimeout(() => {
+      document.querySelector(".box-1").style.height = "30vh";
+      document.querySelector(".box-2").style.height = "70vh";
+      const text = document.querySelectorAll(".text");
+      text.forEach((element) => {
+        element.style.transform = `translateY(100%)`;
+      });
+      document.querySelector(".four-1").classList.remove("rotate");
+      document.querySelector(".four-2").classList.remove("anti-rotate");
+      document.querySelector(".zero").classList.remove("scale");
+      document.querySelector(".four-1").classList.add("bounce1");
+      document.querySelector(".four-2").classList.add("bounce3");
+      document.querySelector(".zero").classList.add("bounce2");
+      document.querySelector(".fa").classList.add("fa-home");
+    }, 20000);
+  </script>
+</html>
